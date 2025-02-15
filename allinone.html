@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Website</title>
+    <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+        font-size: 16px;
+    }
+
+    /* Navigation Styles */
+    header {
+        background: darkred;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #00bcd4;
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 1.5em;
+    }
+
+    /* Section Styles */
+    section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    section:nth-child(odd) {
+        background-color: #f4f4f4;
+    }
+
+    section:nth-child(even) {
+        background-color: #ddd;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: darkred;
+    }
+
+    p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    /* Footer Styles */
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Media Query for Tablets and Smaller Screens */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        .hero-text {
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 20px 10px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Media Query for Extra Small Screens (Phones) */
+    @media (max-width: 480px) {
+        nav ul li a {
+            font-size: 1em;
+        }
+
+        .hero-text {
+            font-size: 1em;
+        }
+
+        h1 {
+            font-size: 1.2em;
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <section id="home">
+        <h1>Welcome to Chinche Afungchwi's Website</h1>
+            <p>This is my homepage</p>
+        </section>
+        <section id="about">
+            <h1>About Us</h1>
+            <p>Everything you need to know about us.</p>
+        </section>
+        <section id="services">
+            <h1>Our Services</h1>
+            <p>Learn more about what we offer.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us here.</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025, All rights not reserved.
+    </footer>
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default anchor behavior
+        const targetId = event.target.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        targetSection.scrollIntoView({
+        behavior: 'smooth'
+            });
+         });
+        });
+    </script>
+</body>
+</html>
